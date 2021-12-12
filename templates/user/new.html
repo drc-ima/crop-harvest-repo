@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block title %}Sign Up{% endblock title %}
+{% block page_title %}Sign Up{% endblock page_title %}
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="form-group m-2">
+                    <label for="id_first_name">First Name</label>
+                    <input type="text" value="{{form_data.first_name}}" name="first_name" required placeholder="Enter First Name" id="id_first_name" class="form-control">
+                </div>
+                <div class="form-group m-2"">
+                    <label for="id_last_name">Last Name</label>
+                    <input type="text" value="{{form_data.last_name}}" name="last_name" required placeholder="Enter Last Name" id="id_last_name" class="form-control">
+                </div>
+                <div class="form-group m-2"">
+                    <label for="id_username">Username</label>
+                    <input type="text" value="{{form_data.username}}" name="username" required placeholder="Enter username" id="id_username" class="form-control">
+                </div>
+                <div class="form-group m-2"">
+                    <label for="id_email">Email Address</label>
+                    <input type="email" value="{{form_data.email}}" name="email" required placeholder="Enter email address" id="id_email" class="form-control">
+                </div>
+                <div class="form-group m-2">
+                    <label for="id_password">Password</label>
+                    <input type="password" required name="password" placeholder="Enter password" id="id_password" class="form-control">
+                </div>
+                <div class="form-group m-2">
+                    <label for="id_confirm_password">Confirm Password</label>
+                    <input type="password" required name="confirm_password" placeholder="Enter password again" id="id_confirm_password" class="form-control">
+                </div>
+                <div class="form-group d-grid gap-2 m-2">
+                    <input type="submit" value="Submit" class="btn btn-block btn-primary">
+                </div>
+            </form>
+            
+        </div>
+    </div>
+{% endblock content %}

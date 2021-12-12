@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% load bootstrap5 %}
+{% block title %}Login{% endblock title %}
+{% block page_title %}Login{% endblock page_title %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <form action="" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <div class="form-group d-grid gap-2">
+                <input type="submit" value="Login" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
